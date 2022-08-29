@@ -23,4 +23,5 @@ org 2000h
  mov AX, letra
  push AX
  call CONTAR_CAR
+hlt
 end
