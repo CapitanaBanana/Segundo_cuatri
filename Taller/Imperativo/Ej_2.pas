@@ -84,7 +84,7 @@ begin
 		v[act]:=temp;
 	end;
 end;
-procedure ordenarinserccion(var v:vector; dl:integer);
+procedure ordenarinsercion(var v:vector; dl:integer);
 var i,j:integer; act:oficina;
 begin
 	for i:=2 to dl do 
@@ -103,6 +103,6 @@ var v:vector; dl:integer;
 begin
 	cargardatos(v,dl);
 	//ordenarseleccion(v,dl);
-	ordenarinserccion(v,dl);
+	ordenarinsercion(v,dl);
 	imprimir(v,dl);
 end.
