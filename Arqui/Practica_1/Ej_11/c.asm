@@ -1,6 +1,6 @@
 org 1000h
-num1 dw 0100101010010100B, 1010101111111110B
-num2 dw 0101010101110101B, 0101010101010111B
+num1 dw 0036h,7219h
+num2 dw 0032h,1232h
 resul dw ?,?
 
 org 2000h
@@ -13,9 +13,11 @@ mov bx, offset num1
 add ax, [bx];sumo a ax parte alta de num1
 mov bx, offset num2
 add ax, [bx]
-mov bx, offset resul
+jnc nocarry
+mov dx, 00ffh
+nocarry:mov bx, offset resul
 mov [bx], ax
-add bx, 1
+add bx, 2
 mov [bx], cx
 hlt
 end
