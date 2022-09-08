@@ -33,7 +33,7 @@ var nuevo,ant,act:lista;
 begin
 	new(nuevo);nuevo^.sig:=nil; nuevo^.dato:=p;
 	act:=v[p.gen];
-	while (act<>nil) and (v[p.gen]^.dato.cod<nuevo^.dato.cod) do 
+	while (act<>nil) and (act^.dato.cod<nuevo^.dato.cod) do 
 	begin
 			ant:=act;
 			act:=act^.sig;
@@ -118,7 +118,6 @@ begin
 	while min.cod<>9999 do
 	begin
 		agregaratras(min,ult);
-		writeln('hola');
 		minimo(v,min);
 	end;
 end;
