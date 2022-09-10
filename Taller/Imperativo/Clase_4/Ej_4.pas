@@ -1,4 +1,4 @@
-tiene funciones los 7 días de la semana. Para cada día se tiene una lista con las entradas vendidas. Se desea procesar la información de 
+{4.	Un teatro tiene funciones los 7 días de la semana. Para cada día se tiene una lista con las entradas vendidas. Se desea procesar la información de 
 * una semana. Implementar un programa que:
 a.	Genere 7 listas con las entradas vendidas para cada día. De cada entrada se lee día (de 1 a 7), código de la obra, asiento y monto. La lectura 
 * finaliza con el código de obra igual a 0. Las listas deben estar ordenadas por código de obra de forma ascendente. 
@@ -128,17 +128,17 @@ begin
 		writeln('----------DIA ', i,'----------');
 		while v[i]<>nil do 
 		begin
-			write('cod: ', v[i]^.dato.cod);
+			writeln('cod: ', v[i]^.dato.cod);
 			v[i]:=v[i]^.sig;
 		end;
 	end;
 end;
 procedure imprimirlista(l:listaob);
 begin
-	writeln('lista con merge:');
-	while l<>nil do begin
-		write('cod: ', l^.cod); writeln(' | ', l^.cant); 
-		l:=l^.sig;
+	if l<>nil then 
+	begin
+		write('Obra: ', l^.cod); writeln(' | ', l^.cant); 
+		imprimirlista(l^.sig);
 	end;
 end;
 var v:vector;pri: listaob;
