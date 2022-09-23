@@ -1,26 +1,33 @@
 
 package tema1;
 
-//Paso 1: Importar la funcionalidad para lectura de datos
-
+import PaqueteLectura.GeneradorAleatorio;
+import PaqueteLectura.Lector;
 
 public class Ej02Jugadores {
 
   
     public static void main(String[] args) {
-        //Paso 2: Declarar la variable vector de double 
+        int df=5;
+        double [] Alturas = new double [df];
+        int i;
+        double suma = 0;
+        double promedio;
+        int cant = 0;
+        for (i=0; i<df; i++){
+            System.out.println("Altura jugador "+(i+1));
+            Alturas[i]= Lector.leerDouble();
+            suma= suma+ Alturas[i];
+        }
+        promedio= suma/df; 
+        System.out.println("El promedio es "+ promedio);
         
-        //Paso 3: Crear el vector para 15 double 
+        for (i=0; i<df; i++)
+            if (Alturas[i]>promedio)
+                cant++;
         
-        //Paso 4: Declarar indice y variables auxiliares a usar
-                
-        //Paso 6: Ingresar 15 numeros (altura), cargarlos en el vector, ir calculando la suma de alturas
-        
-        //Paso 7: Calcular el promedio de alturas, informarlo
-        
-        //Paso 8: Recorrer el vector calculando lo pedido (cant. alturas que están por encima del promedio)
-     
-        //Paso 9: Informar la cantidad.
+        System.out.println("La cantidad de jugadores con altura por encima del promedio es "+ cant);
+       
     }
     
 }
