@@ -18,7 +18,7 @@ public class Ej04 {
         Persona Turnos[][]=new Persona[per][dias];
         System.out.print("Nombre: ");
         nom= Lector.leerString();
-        while ((!(nom.equalsIgnoreCase("ZZZ")))&& (!(j+1==dias && i+1==per))){
+        while ((!(nom.equalsIgnoreCase("ZZZ")))&& (!(j==dias && i==0))){
             edad= GeneradorAleatorio.generarInt(85);
             System.out.println("Edad: "+edad);
             DNI= GeneradorAleatorio.generarInt(99999);
